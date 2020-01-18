@@ -8,9 +8,9 @@ var SCREEN_HEIGHT = 448;//屏幕高
 
 /**************图片资源*****************/
 var MENU_IMAGE = new Image();
-MENU_IMAGE.src = "images/menu.gif";
+MENU_IMAGE.src = "./public/tkdz/images/menu.gif";
 var RESOURCE_IMAGE = new Image();
-RESOURCE_IMAGE.src = "images/tankAll.gif";
+RESOURCE_IMAGE.src = "./public/tkdz/images/tankAll.gif";
 
 
 /**************各个图块在图片中的位置*****************/
@@ -34,13 +34,13 @@ POS["over"] = [384,64];
 POS["prop"] = [256,110];
 
 /**************声音资源*****************/
-var START_AUDIO = new Audio("audio/start.mp3");
-var BULLET_DESTROY_AUDIO = new Audio("audio/bulletCrack.mp3");
-var TANK_DESTROY_AUDIO = new Audio("audio/tankCrack.mp3");
-var PLAYER_DESTROY_AUDIO = new Audio("audio/playerCrack.mp3");
-var MOVE_AUDIO = new Audio("audio/move.mp3");
-var ATTACK_AUDIO = new Audio("audio/attack.mp3");
-var PROP_AUDIO = new Audio("audio/prop.mp3");
+var START_AUDIO = new Audio("./public/tkdz/audio/start.mp3");
+var BULLET_DESTROY_AUDIO = new Audio("./public/tkdz/audio/bulletCrack.mp3");
+var TANK_DESTROY_AUDIO = new Audio("./public/tkdz/audio/tankCrack.mp3");
+var PLAYER_DESTROY_AUDIO = new Audio("./public/tkdz/audio/playerCrack.mp3");
+var MOVE_AUDIO = new Audio("./public/tkdz/audio/move.mp3");
+var ATTACK_AUDIO = new Audio("./public/tkdz/audio/attack.mp3");
+var PROP_AUDIO = new Audio("./public/tkdz/audio/prop.mp3");
 
 
 /**************游戏状态*****************/
