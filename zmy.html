@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>黑客帝国-冰冰老师</title>
+  <style>
+	body{
+		margin: 0;/* 外边距 */
+		overflow: hidden;/* 溢出的内容隐藏 */
+	}
+  </style>
+ </head>
+ <body>
+	<canvas id="canvas" width="500" height="500" style="background-color: #000000;"></canvas>
+
+	<script>
+		//获取元素
+		//document文档
+		//getElement  获取一个标签
+		//ById 用Id命名
+		var canvas = document.getElementById("canvas");
+		//获取canvas的权限
+		var ctx = canvas.getContext("2d");
+		//获取画布的大小和屏幕一样
+			//1. 获取屏幕对象
+			//2. 获取屏幕宽高
+			//3. 赋值给画布
+		var king = window.screen;
+		var w = king.width;//浏览器的宽
+		var h = king.height;//浏览器的高
+		canvas.width = w;
+		canvas.height = h;
+		var fontSize = 20;//每个字的大小
+		var str = "zxcvbnmlkjhgfdsapoiuytrewq";//定义一个字符串
+		//计算一行能显示多少文字 浏览器的宽/每个字的宽
+		var clos = w/fontSize;
+		//给每一个字占一个位置  创建一个数组存入clos个0 怎么存 for
+		var drops=[];
+		for(var i=0;i<clos;i++){
+			drops.push(0);
+		}
+
+		function drawString(){
+			//给矩形区域填充一个带有透明度的颜色
+			ctx.fillStyle = "rgba(0,0,0,0.05)";
+			//画布上画一个矩形区域
+			ctx.fillRect(0,0,w,h);
+			//字体样式
+			ctx.font = "700 "+fontSize+"px 微软雅黑";
+			//给字体添加一个颜色
+			ctx.fillStyle = randomColor();
+			for(var i=0;i<clos;i++){
+				//x轴
+				var x = i*fontSize;
+				//y轴
+				var y = drops[i]*fontSize;
+				//在画布上写字
+				ctx.fillText(str[Math.floor(Math.random()*str.length)],x,y);
+				//多次执行
+				if(y > h && Math.random()>0.99){
+					drops[i]=0;
+				}
+				drops[i]++;
+			}
+			
+		}
+		setInterval(drawString,30);
+		//随机颜色
+		function randomColor(){
+			var r = Math.floor(Math.random()*256);
+			var g = Math.floor(Math.random()*256);
+			var b = Math.floor(Math.random()*256);
+			return "rgb("+r+","+g+","+b+")";
+		}
+		
+	</script>
+ </body>
+</html>
